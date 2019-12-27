@@ -38,8 +38,11 @@ public class MainActivity extends AppCompatActivity implements UsersAdapter.Sele
         this.setSupportActionBar(toolbar);
         this.getSupportActionBar().setTitle("");
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         for(String s:names){
             UserModel userModel = new UserModel(s);
